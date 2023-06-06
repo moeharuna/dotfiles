@@ -46,6 +46,7 @@
       discord
       libvterm
       unrar
+      mcfly
       lazygit
       cloc
       poke

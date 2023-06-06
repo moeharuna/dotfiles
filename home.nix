@@ -42,6 +42,10 @@ in
             source = ./src/polybar;
             recursive = true;
         };
+        ".config/fish"            = {
+            source = ./src/fish;
+            recursive = true;
+        };
         ".mozilla/firefox/kaguya"            = {
             source = ./src/firefox_config/chrome;
             recursive = true;
