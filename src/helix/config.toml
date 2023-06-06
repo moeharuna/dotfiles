@@ -1,0 +1,14 @@
+theme= "heisenberg"
+[editor]
+line-number = "relative"
+mouse = false
+true-color = true
+
+[keys.normal]
+C-h = "goto_line_start"
+"C-l" = "goto_line_end"
+A-x = { s = ":w"}
+C-z = "no_op"
+
+[editor.indent-guides]
+render = true

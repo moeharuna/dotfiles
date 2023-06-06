@@ -1,0 +1,20 @@
+[aliases]
+"^VirtualBox Machine" = "vboxGuest"
+"^VirtualBox Manager" = "vboxManager"
+[options]
+no_icon_names = true
+remove_duplicates = true
+
+[icons]
+firefox = ""
+Emacs = ""
+steam = ""
+telegram-desktop = ""
+discord = "󰙯"
+vboxGuest = ""
+Alacritty = ""
+helix = ""
+kitty = ""
+Code = ""
+[general]
+separator = ""
