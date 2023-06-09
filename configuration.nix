@@ -66,6 +66,7 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   systemd.services.NetworkManager-wait-online.enable = false; 
   time.timeZone = "Europe/Moscow";
+  zramSwap.enable = true;  
 
 
   virtualisation.libvirtd.enable = true;
