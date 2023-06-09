@@ -188,7 +188,7 @@ exec_always --no-startup-id ~/.config/polybar/blocks/launch.sh
 exec_always --no-startup-id ~/.config/i3/xrandr.sh
 exec_always --no-startup-id xmodmap ~/.config/i3/xmodmap
 exec_always --no-startup-id feh --bg-fill -z ~/.wallpaper
-exec_always --no-startup-id i3-auto-layout
+exec_always --no-startup-id ~/.config/i3/i3-extender
 exec_always --no-startup-id i3wsr --config ~/.config/i3wsr/config.toml
 exec_always --no-startup-id ~/.emacs.d/bin/doom sync
 exec_always --no-startup-id picom

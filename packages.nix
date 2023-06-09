@@ -165,6 +165,7 @@
       virt-manager
     ];
   environment.systemPackages = with pkgs; [
+    xdotool
     helix
     kde-cli-tools
     vim # Do not forget to add an editor to edit configuration.nix! The Nano edito ris also installed by default.
