@@ -162,6 +162,7 @@
   programs.ssh.startAgent = true;
   programs.ssh.enableAskPassword = true;
   security.pam.enableSSHAgentAuth = true;
+  programs.firefox.nativeMessagingHosts.tridactyl = true;
 
   services.syslog-ng.enable = true;
   services.journald.forwardToSyslog = true;
