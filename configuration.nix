@@ -26,12 +26,18 @@
   ];
   programs.fish.enable = true;
   programs.bash.undistractMe.enable = true;
-  programs.ssh.askPassword = "kwalletaskpass";
+  programs.ssh.askPassword = "";
   programs.nix-ld.enable = true;
   environment.variables = {
     PATH = "/home/kaguya/.cargo/bin";
     EDITOR = "hx";
   };
+  environment.extraInit = ''
+    # Do not want this in the environment. NixOS always sets it and does not
+    # provide any option not to, so I must unset it myself via the
+    # environment.extraInit option.
+    unset -v SSH_ASKPASS
+  '';
   virtualisation.docker.enable = true;
   boot.readOnlyNixStore = true;
   users.users.root = {
@@ -137,13 +143,21 @@
   security.polkit.enable = true;
   services.xserver.updateDbusEnvironment = true;
 
-  services.logind.extraConfig = "IdleActionSec=30min";
+  services.logind.extraConfig = "RuntimeDirectorySize=2G";
 
-
-
+  networking.extraHosts =
+    ''
+      192.168.52.253 desu1
+      192.168.52.254 desu2
+    '';
   nix = {
-   package = pkgs.nixFlakes;
-   extraOptions =  "experimental-features = nix-command flakes";
+    package = pkgs.nixFlakes;
+    extraOptions =  "experimental-features = nix-command flakes";
+    gc = {
+      automatic = true;
+      randomizedDelaySec = "14m";
+      options = "--delete-older-than 10d";
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -160,7 +174,7 @@
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
   programs.ssh.startAgent = true;
-  programs.ssh.enableAskPassword = true;
+  programs.ssh.enableAskPassword = false;
   security.pam.enableSSHAgentAuth = true;
   programs.firefox.nativeMessagingHosts.tridactyl = true;
 

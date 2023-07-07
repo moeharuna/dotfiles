@@ -41,7 +41,6 @@
       ghidra
       mypaint
       rustdesk
-      rustup
       sniffnet
       discord
       libvterm
@@ -52,7 +51,6 @@
       poke
       kitty
       nix-index
-      kwalletcli
       github-desktop
       harfbuzz
       pipenv
@@ -163,6 +161,7 @@
       duf
       direnv
       virt-manager
+      cachix
     ];
   environment.systemPackages = with pkgs; [
     xdotool
